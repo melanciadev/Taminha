@@ -17,7 +17,8 @@ namespace Melancia.Taminha
 	public enum Gamestate
 	{
 		OpenScreen,
-		MainScreen
+		MainScreen,
+		GameScreen
 	}
 
 	[System.Serializable]

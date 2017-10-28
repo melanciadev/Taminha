@@ -18,13 +18,11 @@ namespace Melancia.Taminha {
 		public Image mainScreenImage;
 		//TODO - Title Image and other elements
 
-
 		public static ScreenController instance;
 		public void Awake()
 		{
 			instance = this;
 		}
-
 
 		public void Start()
 		{
@@ -47,7 +45,6 @@ namespace Melancia.Taminha {
 			//Only if on the main screen
 			if(currentGamestate == Gamestate.MainScreen)
 			{
-				print("Start the Game!!");
 				//TODO: Fazer FANTASMA entrar na fechadura e realizar transição para primeira tela de jogo.
 			}
 		}

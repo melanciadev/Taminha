@@ -36,7 +36,7 @@ namespace Melancia.Taminha
 		//TESTE -TEMP
 		public void Start()
 		{
-			ShowAct(currentDialogue);
+			//ShowAct(currentDialogue);
 		}
 		//TESTE -TEMP
 
