@@ -22,9 +22,11 @@ namespace Melancia.Taminha
 		public float fastTextSpeed = 0.01f;
 		private float currentTextSpeed;
 
-		[Header("Dialogue")]
+		[Header("Dialogue Collection")]
 		public List<DialogueItem> dialogueList;
 		public List<DialogueItem> currentDialogList;
+
+		[Header("Dialogue")]
 		public int currentDialogueItem;
 		public DialogueStatus currentStatus = DialogueStatus.None;
 
@@ -35,6 +37,19 @@ namespace Melancia.Taminha
 		[Header("Dialogue choice text")]
 		public Text dialogueChoiceDownText;
 		public Image dialogueChoiceDownImage;
+		public Text dialogueGoodChoiceButtonText; //TEMP
+		public Text dialogueBadChoiceButtonText; //TEMP
+
+
+		//TESTE
+		public void Start()
+		{
+			currentDialogList = dialogueList;
+			currentDialogueItem = 0;
+			ShowAllDialogue(currentDialogList, currentDialogueItem);
+		}
+		//TESTE
+
 
 
 		//Check click to speedup text
@@ -57,32 +72,27 @@ namespace Melancia.Taminha
 			}
 		}
 
-		//TESTE
-		public void Start()
-		{
-			currentDialogList = dialogueList;
-			currentDialogueItem = 0;
-			ShowAllDialogue(currentDialogList, currentDialogueItem);
-		}
-		//TESTE
-
+		//Show all the Dialogue group (Act)
 		public void ShowAllDialogue(List<DialogueItem> dialogueList, int currentItem)
 		{
 			ResetDialogueTexts();
-			ShowDialogueItem(dialogueList[currentDialogueItem]);
+			if (currentDialogueItem <= dialogueList.Count)
+				ShowDialogueItem(dialogueList[currentDialogueItem]);
 			currentDialogueItem++;
 
 			//TODO - What happens when the last dialog is made?
 		}
-
+	
+		//Call the right function depending if it`s a Regular or choice one
 		public void ShowDialogueItem(DialogueItem dialogueItem)
 		{
 			if (dialogueItem.hasChoice)
-				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueChoice.choiceList, dialogueItem.dialogueString));
+				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueChoice));
 			else
 				StartCoroutine(StartRegularDialogue(dialogueItem.isGhostTalk, dialogueItem.dialogueString));
 		}
 
+		//For the Regular Dialogues
 		public IEnumerator StartRegularDialogue(bool isGhostTalk, string dialogue)
 		{
 			currentStatus = DialogueStatus.Showing;
@@ -104,24 +114,29 @@ namespace Melancia.Taminha
 			currentStatus = DialogueStatus.Waiting;
 			yield return null;
 		}
-		public IEnumerator StartChoiceDialogue(List<Choice> choiceList, string title)
-		{
-			currentStatus = DialogueStatus.Showing;
-			currentTextSpeed = regularTextSpeed;
 
-			int currentChar = 0;
-			string newString = "";
-			Text currentText = dialogueChoiceDownText;
-			currentText.text = newString;
+		//For the choices Dialogues
+		public IEnumerator StartChoiceDialogue(Choice choiceOption)
+		{
+			currentStatus = DialogueStatus.Choosing;
+
+			dialogueChoiceDownImage.gameObject.SetActive(true);
+			dialogueGoodChoiceButtonText.text = choiceOption.goodChoice;
+			dialogueBadChoiceButtonText.text = choiceOption.badChoice;
 
 			yield return null;
+
+			//TODO - ESCOLHA DA RESPOSTA
 		}
 
+		//Reset all content from the dialogues boxes
 		public void ResetDialogueTexts()
 		{
 			dialogueUpText.text = "";
 			dialogueDownText.text = "";
 			dialogueChoiceDownText.text = "";
+			dialogueGoodChoiceButtonText.text = "";
+			dialogueBadChoiceButtonText.text = "";
 			dialogueChoiceDownImage.gameObject.SetActive(false);
 		}
 	}

@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 237397498}
   - component: {fileID: 237397497}
   m_Layer: 0
-  m_Name: ChoiceTwo
+  m_Name: BadChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ RectTransform:
   m_Children:
   - {fileID: 712631205}
   m_Father: {fileID: 1759113034}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -464,7 +464,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686913453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 359, z: 0}
+  m_LocalPosition: {x: 0, y: 515, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1626641196}
@@ -474,7 +474,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: -50, y: 270}
+  m_SizeDelta: {x: -50, y: 535.1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &686913455
 MonoBehaviour:
@@ -495,7 +495,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 58e409a51ba3a4fcd87547eccac71037, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 712631207}
   - component: {fileID: 712631206}
   m_Layer: 0
-  m_Name: Text
+  m_Name: BadChoiceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,80 +600,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712631204}
---- !u!1 &732204263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 732204264}
-  - component: {fileID: 732204265}
-  - component: {fileID: 732204266}
-  m_Layer: 0
-  m_Name: DownChoiceDialogueText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &732204264
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 732204263}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 90, z: 0}
-  m_LocalScale: {x: 0.999936, y: 0.999936, z: 0.999936}
-  m_Children: []
-  m_Father: {fileID: 1759113034}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: -50, y: 60}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!222 &732204265
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 732204263}
---- !u!114 &732204266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 732204263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 14
-    m_MaxSize: 28
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: PERGUNTA A SER RESPONDIDA
 --- !u!1 &796300572
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +611,7 @@ GameObject:
   - component: {fileID: 796300575}
   - component: {fileID: 796300574}
   m_Layer: 0
-  m_Name: Text
+  m_Name: GoodChoiceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -760,7 +686,7 @@ GameObject:
   - component: {fileID: 1261985398}
   - component: {fileID: 1261985397}
   m_Layer: 0
-  m_Name: ChoiceOne
+  m_Name: GoodChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +704,7 @@ RectTransform:
   m_Children:
   - {fileID: 796300573}
   m_Father: {fileID: 1759113034}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -895,29 +821,30 @@ MonoBehaviour:
       reais e \xFAnicas que pertencem apenas a ela. E este \xE9 o fim."
     hasChoice: 0
     dialogueChoice:
-      choiceList: []
+      goodChoice: 
+      badChoice: 
   - isGhostTalk: 0
-    dialogueString: "2. Esta linha, por\xE9m, n\xE3o consegue ser t\xE3o bonita quando
+    dialogueString: "2. Esta linha, por\xE9m, n\xE3o consegue ser t\xE3o bonita quanto
       a primeira.. isso \xE9 bastante triste, n\xE3o acha?"
     hasChoice: 0
     dialogueChoice:
-      choiceList: []
+      goodChoice: 
+      badChoice: 
   - isGhostTalk: 1
     dialogueString: "3. O que voc\xEA pensa sobre a linha de texto n\xE3o t\xE3o bonita?"
     hasChoice: 1
     dialogueChoice:
-      choiceList:
-      - isGoodChoice: 1
-        choiceString: Me senti triste por ela
-      - isGoodChoice: 0
-        choiceString: "ah... paci\xEAncia, n\xE9?"
+      goodChoice: Tenho pena
+      badChoice: Tenho Descaso
   currentDialogList: []
   currentDialogueItem: 0
   currentStatus: 0
   dialogueUpText: {fileID: 1626641194}
   dialogueDownText: {fileID: 323953990}
-  dialogueChoiceDownText: {fileID: 732204266}
+  dialogueChoiceDownText: {fileID: 0}
   dialogueChoiceDownImage: {fileID: 1759113032}
+  dialogueGoodChoiceButtonText: {fileID: 796300574}
+  dialogueBadChoiceButtonText: {fileID: 712631206}
 --- !u!4 &1358086991
 Transform:
   m_ObjectHideFlags: 0
@@ -955,7 +882,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397187081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -487, y: -359, z: 0}
+  m_LocalPosition: {x: -935, y: -515, z: 0}
   m_LocalScale: {x: 0.999936, y: 0.999936, z: 0.999936}
   m_Children:
   - {fileID: 323953992}
@@ -1064,7 +991,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1626641193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -102.5, z: 0}
+  m_LocalPosition: {x: -15, y: -203.67499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686913454}
@@ -1072,8 +999,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 32.5}
-  m_SizeDelta: {x: -70, y: -135}
+  m_AnchoredPosition: {x: -15, y: 63.875}
+  m_SizeDelta: {x: -170, y: -267.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1759113031
 GameObject:
@@ -1091,7 +1018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1759113032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,7 +1062,6 @@ RectTransform:
   m_LocalPosition: {x: 350, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 732204264}
   - {fileID: 1261985396}
   - {fileID: 237397496}
   m_Father: {fileID: 1397187082}
@@ -1158,7 +1084,7 @@ GameObject:
   - component: {fileID: 1794046168}
   - component: {fileID: 1794046167}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1098,7 @@ RectTransform:
   m_GameObject: {fileID: 1794046165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013020833, y: 0.013020833, z: 0.013020833}
+  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_Children:
   - {fileID: 686913454}
   - {fileID: 1397187082}
@@ -1214,7 +1140,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1024, y: 768}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
