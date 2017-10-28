@@ -15,7 +15,7 @@ public class ResizeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//TODO: Aplicar código do KENZI de Deform de Mesh e Comparação
+		//TODO: Aplicar código do KENJI de Deform de Mesh e Comparação
 		//TODO: Aplicar Regras do Minigame
 
 
