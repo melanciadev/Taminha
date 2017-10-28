@@ -120,6 +120,12 @@ namespace Melancia.Taminha
 				newString += dialogue[currentChar];
 				currentText.text = newString;
 				yield return new WaitForSeconds(currentTextSpeed);
+
+				//Wait twice as long when a Comma is printed.
+				if (dialogue [currentChar] == ',') {
+					yield return new WaitForSeconds(currentTextSpeed);
+				}
+
 				currentChar++;
 			}
 
