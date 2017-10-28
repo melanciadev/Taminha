@@ -19,4 +19,11 @@ namespace Melancia.Taminha
 		public bool hasChoice = false;
 		public Choice dialogueChoice;
 	}
+
+	[System.Serializable]
+	public class Dialogue
+	{
+		public List<DialogueItem> dialogueList;
+		public Character speaker;
+	}
 }

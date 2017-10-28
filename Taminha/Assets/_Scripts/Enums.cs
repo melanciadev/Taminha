@@ -1,0 +1,31 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Melancia.Taminha
+{
+	[System.Serializable]
+	public enum DialogueStatus
+	{
+		None,
+		Showing,
+		Waiting,
+		Choosing
+	}
+
+	[System.Serializable]
+	public enum Gamestate
+	{
+		OpenScreen,
+		MainScreen
+	}
+
+	[System.Serializable]
+	public enum Character
+	{
+		ChitchatGirl,
+		CoolProfessor,
+		TennisClubProfessor
+	}
+
+}

@@ -5,15 +5,6 @@ using UnityEngine.UI;
 
 namespace Melancia.Taminha
 {
-	[System.Serializable]
-	public enum DialogueStatus
-	{
-		None,
-		Showing,
-		Waiting,
-		Choosing
-	}
-
 	public class DialogueController : MonoBehaviour
 	{
 		[Header("Text Speed")]
@@ -23,8 +14,10 @@ namespace Melancia.Taminha
 		private float currentTextSpeed;
 
 		[Header("Dialogue Collection")]
-		public List<DialogueItem> dialogueList;
-		public List<DialogueItem> currentDialogList;
+		public Dialogue currentDialogue;
+
+		[Header("Dialogue Top Baloon")]
+		public Animator topBalloonAnimator;
 
 		[Header("Dialogue")]
 		public int currentDialogueItem;
@@ -35,26 +28,23 @@ namespace Melancia.Taminha
 		public Text dialogueDownText;
 
 		[Header("Dialogue choice text")]
-		public Text dialogueChoiceDownText;
 		public Image dialogueChoiceDownImage;
 		public Text dialogueGoodChoiceButtonText; //TEMP
 		public Text dialogueBadChoiceButtonText; //TEMP
 
 
-		//TESTE
+		//TESTE -TEMP
 		public void Start()
 		{
-			currentDialogList = dialogueList;
-			currentDialogueItem = 0;
-			ShowAllDialogue(currentDialogList, currentDialogueItem);
+			ShowAct(currentDialogue);
 		}
-		//TESTE
+		//TESTE -TEMP
 
 
 
-		//Check click to speedup text
 		public void Update()
 		{
+			//When the text is being showed, speed it.
 			if (currentStatus == DialogueStatus.Showing)
 			{
 				if (Input.GetMouseButtonDown(0)) 
@@ -63,19 +53,41 @@ namespace Melancia.Taminha
 					currentTextSpeed = fastTextSpeed;
 			}
 
+			//When the text end, click to go to the next 
 			else if (currentStatus == DialogueStatus.Waiting)
 			{
 				if (Input.GetMouseButtonUp (0))
 				{
-					ShowAllDialogue(currentDialogList, currentDialogueItem);
+					ShowCurrentDialogue(currentDialogue.dialogueList);
 				}
 			}
 		}
+			
+		//Show all the act
+		public void ShowAct(Dialogue currentDialogue)
+		{
+			//Change to the right Balloon
+			switch (currentDialogue.speaker) {
+			case Character.ChitchatGirl:
+				topBalloonAnimator.SetInteger("ballonIndex", 0);
+				break;
+			case Character.CoolProfessor:
+				topBalloonAnimator.SetInteger("ballonIndex", 1);
+				break;
+			case Character.TennisClubProfessor:
+				topBalloonAnimator.SetInteger("ballonIndex", 2);
+				break;
+			}
+			currentDialogueItem = 0;
 
-		//Show all the Dialogue group (Act)
-		public void ShowAllDialogue(List<DialogueItem> dialogueList, int currentItem)
+			ShowCurrentDialogue (currentDialogue.dialogueList);
+		}
+
+		//Show the current dialogue
+		public void ShowCurrentDialogue(List<DialogueItem> dialogueList)
 		{
 			ResetDialogueTexts();
+
 			if (currentDialogueItem <= dialogueList.Count)
 				ShowDialogueItem(dialogueList[currentDialogueItem]);
 			currentDialogueItem++;
@@ -134,7 +146,6 @@ namespace Melancia.Taminha
 		{
 			dialogueUpText.text = "";
 			dialogueDownText.text = "";
-			dialogueChoiceDownText.text = "";
 			dialogueGoodChoiceButtonText.text = "";
 			dialogueBadChoiceButtonText.text = "";
 			dialogueChoiceDownImage.gameObject.SetActive(false);
