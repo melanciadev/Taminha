@@ -33,8 +33,6 @@ namespace Melancia.Taminha
 		public Text dialogueDownText;
 
 		[Header("Dialogue choice text")]
-		public Text dialogueChoiceUpText;
-		public Image dialogueChoiceUpImage;
 		public Text dialogueChoiceDownText;
 		public Image dialogueChoiceDownImage;
 
@@ -108,7 +106,14 @@ namespace Melancia.Taminha
 		}
 		public IEnumerator StartChoiceDialogue(List<Choice> choiceList, string title)
 		{
-			//TODO
+			currentStatus = DialogueStatus.Showing;
+			currentTextSpeed = regularTextSpeed;
+
+			int currentChar = 0;
+			string newString = "";
+			Text currentText = dialogueChoiceDownText;
+			currentText.text = newString;
+
 			yield return null;
 		}
 
@@ -116,8 +121,6 @@ namespace Melancia.Taminha
 		{
 			dialogueUpText.text = "";
 			dialogueDownText.text = "";
-			dialogueChoiceUpText.text = "";
-			dialogueChoiceUpImage.gameObject.SetActive(false);
 			dialogueChoiceDownText.text = "";
 			dialogueChoiceDownImage.gameObject.SetActive(false);
 		}
