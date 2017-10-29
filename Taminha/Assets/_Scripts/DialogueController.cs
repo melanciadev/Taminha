@@ -37,21 +37,55 @@ namespace Melancia.Taminha
 
 		[Header("Dialogue choice text")]
 		public Image dialogueChoiceDownImage;
-		public Text dialogueGoodChoiceButtonText; //TEMP
-		public Text dialogueBadChoiceButtonText; //TEMP
+		public Text dialogueGoodChoiceButtonText;
+		public Text dialogueBadChoiceButtonText;
 
 		[Header("Input")]
 		public int inputSelectSide = 0;
 
+		[Header("Animation")]
+		public Image boyImage;
+		public Vector2 startBoySize;
+		public Vector2 finalBoySize;
+		public Image speakerImage;
+		public float startSpeakerPosition;
+		public float finalSpeakerPosition;
+		public Image balloonImage;
+		public Vector2 startBalloonScale;
+		public Vector2 finalBalloonScale;
+		public float speedOutGood = 0.5f;
+		public float speedOutBad = 0.1f;
 
-		//TESTE -TEMP
 		public void Start()
 		{
-			ShowAct(currentDialogue);
+			//Change to the right Balloon, speaker
+			int speaker = (int)currentDialogue.speaker;
+			topBalloonAnimator.SetInteger("ballonIndex", speaker);
+			speakerAnimator.SetInteger("characterIndex", speaker);
+			backgroundImage.sprite = characterBackgrounds[speaker];
+
+			EnterAnimation();
 		}
-		//TESTE -TEMP
 
+		public void EnterAnimation()
+		{
+			//Start positions
+			boyImage.rectTransform.DOSizeDelta(startBoySize, 0.0f);
+			speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, 0.0f);
+			balloonImage.rectTransform.DOScale(startBalloonScale, 0.0f);
 
+			//Final Positions
+			boyImage.rectTransform.DOSizeDelta(finalBoySize, 1.5f).OnComplete(() =>
+				{
+					speakerImage.rectTransform.DOAnchorPosX(finalSpeakerPosition, 0.5f).OnComplete(() =>
+						{
+							balloonImage.rectTransform.DOScale(finalBalloonScale, 0.5f).OnComplete(() =>
+								{
+									ShowAct(currentDialogue);
+								});
+						});
+				});
+		}
 
 		public void Update()
 		{
@@ -85,15 +119,24 @@ namespace Melancia.Taminha
 			}
 		}
 			
+		public void ExitAnimation()
+		{
+			balloonImage.rectTransform.DOScale (startBalloonScale, 0.2f).OnComplete(() =>
+				{
+					if(isGoodPath)
+					{
+						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutGood);
+					}
+					else
+					{
+						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutBad);
+					}
+				});
+		}
+
 		//Show all the act
 		public void ShowAct(Dialogue currentDialogue)
 		{
-			//Change to the right Balloon and speaker
-			int speaker = (int)currentDialogue.speaker;
-			topBalloonAnimator.SetInteger("ballonIndex", speaker);
-			speakerAnimator.SetInteger("characterIndex", speaker);
-			backgroundImage.sprite = characterBackgrounds[speaker];
-			
 			currentDialogueItem = 0;
 			ShowCurrentDialogue (currentDialogue.dialogueList);
 		}
@@ -166,7 +209,8 @@ namespace Melancia.Taminha
 			}
 
 			else {
-				print("FIM");
+				currentStatus = DialogueStatus.End;
+				ExitAnimation ();
 			}
 		}
 	

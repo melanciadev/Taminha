@@ -259,6 +259,18 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -864.9245
       objectReference: {fileID: 0}
+    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: characterBackgrounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5dee44f6a532d54d920e2f4b6b3cc3a,
+        type: 3}
+    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: characterBackgrounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 970a7eead87a12c44bc2203d78e057ae,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
   m_IsPrefabParent: 0
@@ -295,8 +307,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c6ac60cae04d88af5eaf3f56a3b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueList: []
-  speaker: 0
+  dialogueList:
+  - dialogueString: "Opa, cara nova na \xE1rea! Voc\xEA parece um amante de T\xCANIS,
+      na bouinha parece mesmo!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Eu sou o l\xEDder do Clubinho de T\xCANIS, e eu to recrutando
+      novos membros!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "T\xCANIS \xE9 um esporte top, mas s\xF3 os igualmente tops conseguem
+      jog\xE1-lo, e eu to vendo que voc\xEA \xE9 um deles!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Seus p\xE9s, eles parecem fortes, iguaizinhos aos p\xE9s de um
+      profissional! Talvez um dia voc\xEA at\xE9 se torne um profissional do T\xCANIS!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Ent\xE3o, ta afim de entrar no Clubinho de T\xCANIS?"
+    hasChoice: 1
+    dialogueChoice:
+      goodChoice: "Ah, claro! Eu acho que consigo aprender T\xEAnis\u2026 sou um meninu!"
+      badChoice: "EU N\xC3O SOU CONFIANTE O BASTANTE PARA T\xCANIS, SAI FORA!"
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Dahora!! Vou me esfor\xE7ar para mostrar tudo sobre o T\xCANIS!
+      Mas primeiro assina aqui\u2026 e aqui\u2026"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Tudo certo! Agora bora fazer aquela obrigat\xF3ria dancinha do
+      T\xCANIS! Dancinha, Dancinha\u2026"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Depois disso vai pra casa e descansa, pois amanh\xE3 meninu,
+      voc\xEA come\xE7a sua carreira no T\xCANIS!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Ah, agora eu entendi\u2026 Eu tinha esperan\xE7a em ti, mas acho
+      que meus olhos de T\xCANIS me enganaram\u2026"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  - dialogueString: "Espero que um dia tu perceba que, bem l\xE1 no fundo, voc\xEA
+      estava preparado pro T\xCANIS! "
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  - dialogueString: '....................................'
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  speaker: 2
 --- !u!4 &1288842137
 Transform:
   m_ObjectHideFlags: 0
