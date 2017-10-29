@@ -417,8 +417,8 @@ MonoBehaviour:
   balloonImage: {fileID: 114091021295067046}
   startBalloonScale: {x: 0, y: 0}
   finalBalloonScale: {x: 1, y: 1}
-  speedOutGood: 0.5
-  speedOutBad: 0.1
+  speedOutGood: 0.1
+  speedOutBad: 0.5
 --- !u!114 &114311303027023936
 MonoBehaviour:
   m_ObjectHideFlags: 1

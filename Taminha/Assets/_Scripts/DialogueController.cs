@@ -56,7 +56,6 @@ namespace Melancia.Taminha
 		public float speedOutGood = 0.5f;
 		public float speedOutBad = 0.1f;
 
-
 		public void Start()
 		{
 			//Change to the right Balloon, speaker
@@ -67,7 +66,6 @@ namespace Melancia.Taminha
 
 			EnterAnimation();
 		}
-
 
 		public void EnterAnimation()
 		{
