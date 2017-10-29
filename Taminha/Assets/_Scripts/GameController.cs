@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace Melancia.Taminha {
 	public class GameController:MonoBehaviour {
-		public static float deformScore = .8f;
+		public static float deformScore = .85f;
 		public static Vector2 mouseDelta;
 
 		static Transform tr;

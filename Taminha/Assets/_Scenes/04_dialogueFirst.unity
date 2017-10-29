@@ -328,40 +328,35 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224992771500133980, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -560
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -894.3452
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -560.84076
-      objectReference: {fileID: 0}
     - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 509.84076
+      value: 786.5539
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 894.3452
+      value: 1485.0958
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -560.84076
+      value: -837.5539
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1485.0958
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -837.5539
       objectReference: {fileID: 0}
     - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -560.84076
+      value: -837.5539
       objectReference: {fileID: 0}
     - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}

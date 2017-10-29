@@ -110,26 +110,46 @@ namespace Melancia.Taminha
 					//Check if it is a good one
 					if (isGoodPath) {
 						//And if the next one is, play it
-						if (dialogueList [currentDialogueItem].isGoodPath) {
+						if (dialogueList [currentDialogueItem].isGoodPath)
+						{
 							ShowDialogueItem (dialogueList [currentDialogueItem]);
-						} else {
 							currentDialogueItem++;
-							if (currentDialogueItem == dialogueList.Count)
+							if (currentDialogueItem + 1 == dialogueList.Count)
+							{
 								isLastDialogue = true;
-							ShowCurrentDialogue (dialogueList);
+							}
+						} 
+						else
+						{
+							currentDialogueItem++;
+							if (currentDialogueItem + 1 >= dialogueList.Count)
+							{
+								isLastDialogue = true;
+							}
+							ShowCurrentDialogue(dialogueList);
 						}
 					}
 
 					//Check if it is a bad one
 					else {
 						//And if the next one is, play it
-						if (!dialogueList [currentDialogueItem].isGoodPath) {
+						if (!dialogueList[currentDialogueItem].isGoodPath)
+						{
 							ShowDialogueItem (dialogueList [currentDialogueItem]);
-						} else {
 							currentDialogueItem++;
-							if (currentDialogueItem == dialogueList.Count)
+							if (currentDialogueItem + 1 == dialogueList.Count)
+							{
 								isLastDialogue = true;
-							ShowCurrentDialogue (dialogueList);
+							}
+						}
+						else
+						{
+							currentDialogueItem++;
+							if (currentDialogueItem + 1 >= dialogueList.Count)
+							{
+								isLastDialogue = true;
+							}
+							ShowCurrentDialogue(dialogueList);
 						}
 					}
 				} 
@@ -141,7 +161,7 @@ namespace Melancia.Taminha
 					currentDialogueItem++;
 					if (currentDialogueItem == dialogueList.Count)
 						isLastDialogue = true;
-				 
+
 				}
 			}
 
