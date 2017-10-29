@@ -14,6 +14,10 @@ namespace Melancia.Taminha
 		public float fastTextSpeed = 0.01f;
 		private float currentTextSpeed;
 
+		[Header("Background")]
+		public Image backgroundImage;
+		public List<Sprite> backgroundSprites; 
+
 		[Header("Dialogue Collection")]
 		public Dialogue currentDialogue;
 
@@ -97,16 +101,19 @@ namespace Melancia.Taminha
 			//Change to the right Balloon and speaker
 			switch (currentDialogue.speaker) {
 			case Character.ChitchatGirl:
-				topBalloonAnimator.SetInteger("ballonIndex", 0);
-				speakerAnimator.SetInteger("characterIndex", 0);
+				topBalloonAnimator.SetInteger ("ballonIndex", 0);
+				speakerAnimator.SetInteger ("characterIndex", 0);
+				backgroundImage.sprite = backgroundSprites [0];
 				break;
 			case Character.CoolProfessor:
 				topBalloonAnimator.SetInteger("ballonIndex", 1);
 				speakerAnimator.SetInteger("characterIndex", 1);
+				backgroundImage.sprite = backgroundSprites [1];
 				break;
 			case Character.TennisClubProfessor:
 				topBalloonAnimator.SetInteger("ballonIndex", 2);
 				speakerAnimator.SetInteger("characterIndex", 2);
+				backgroundImage.sprite = backgroundSprites [2];
 				break;
 			}
 
@@ -126,26 +133,46 @@ namespace Melancia.Taminha
 					//Check if it is a good one
 					if (isGoodPath) {
 						//And if the next one is, play it
-						if (dialogueList [currentDialogueItem].isGoodPath) {
+						if (dialogueList [currentDialogueItem].isGoodPath)
+						{
 							ShowDialogueItem (dialogueList [currentDialogueItem]);
-						} else {
 							currentDialogueItem++;
-							if (currentDialogueItem == dialogueList.Count)
+							if (currentDialogueItem + 1 == dialogueList.Count)
+							{
 								isLastDialogue = true;
-							ShowCurrentDialogue (dialogueList);
+							}
+						} 
+						else
+						{
+							currentDialogueItem++;
+							if (currentDialogueItem + 1 >= dialogueList.Count)
+							{
+								isLastDialogue = true;
+							}
+							ShowCurrentDialogue(dialogueList);
 						}
 					}
 
 					//Check if it is a bad one
 					else {
 						//And if the next one is, play it
-						if (!dialogueList [currentDialogueItem].isGoodPath) {
+						if (!dialogueList[currentDialogueItem].isGoodPath)
+						{
 							ShowDialogueItem (dialogueList [currentDialogueItem]);
-						} else {
 							currentDialogueItem++;
-							if (currentDialogueItem == dialogueList.Count)
+							if (currentDialogueItem + 1 == dialogueList.Count)
+							{
 								isLastDialogue = true;
-							ShowCurrentDialogue (dialogueList);
+							}
+						}
+						else
+						{
+							currentDialogueItem++;
+							if (currentDialogueItem + 1 >= dialogueList.Count)
+							{
+								isLastDialogue = true;
+							}
+							ShowCurrentDialogue(dialogueList);
 						}
 					}
 				} 

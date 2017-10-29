@@ -21,8 +21,7 @@ namespace Melancia.Taminha
 		public bool isGoodPath = false;
 	}
 
-	[System.Serializable]
-	public class Dialogue
+	public class Dialogue : MonoBehaviour
 	{
 		public List<DialogueItem> dialogueList;
 		public Character speaker;

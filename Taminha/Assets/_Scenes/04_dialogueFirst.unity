@@ -112,6 +112,125 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &161608379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 161608381}
+  - component: {fileID: 161608380}
+  m_Layer: 0
+  m_Name: CurrentDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &161608380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161608379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5c6ac60cae04d88af5eaf3f56a3b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - dialogueString: "Oie, n\xE3o ta um dia lindo? Eu acho maneiro! Me lembra as flores
+      no jardim da minha v\xF3\u2026"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Ah! Voc\xEA viu o gato do professor? \xC9 lindin de mais! Eu
+      queria fazer carinho nele, e ama-lo, pra sempre!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "E aquele alarme ontem??? Mds, voc\xEA n\xE3o odeia quando esses
+      alarmes ficam a noite toda tocando? Nossa, eu odeio muito!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Mas\u2026 e voc\xEA? Do que tu gosta? Eu acho que tu gosta das
+      coisas dahoras, que nem eu. \xC9 o que sua cara me diz!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Ah, n\xE3o seja t\xEDmido, voc\xEA pode falar comigo!"
+    hasChoice: 1
+    dialogueChoice:
+      goodChoice: "u concordo com tudo que voc\xEA disse, eu sou um meninu!"
+      badChoice: TU PERGUNTA COISA DE MAIS, SAI DAQUI OW!
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Ah! Sabe, eu acho que eu gosto de voc\xEA, meninu! Voc\xEA quer
+      passear depois? Claro que voc\xEA quer, eu consigo dizer s\xF3 por esse olhar
+      a\xED!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Mas n\xE3o posso agora n\xE3o! Eu n\xE3o vacilo com meu dever
+      de casa\u2026 mals ae!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Tu sabe como o prof \xE9, preciso correr! At\xE9!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: '............................................................'
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  - dialogueString: '............................................................'
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  speaker: 0
+--- !u!4 &161608381
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161608379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1131398664
 Prefab:
   m_ObjectHideFlags: 0
@@ -209,16 +328,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1483.0297
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -834.20416
-      objectReference: {fileID: 0}
+      propertyPath: currentDialogue
+      value: 
+      objectReference: {fileID: 161608380}
     - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_Camera
@@ -227,22 +341,32 @@ Prefab:
     - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -834.20416
+      value: -864.9245
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1483.0297
+      value: 1533.7546
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -834.20416
+      value: -864.9245
       objectReference: {fileID: 0}
     - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 788.20416
+      value: 813.9245
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1533.7546
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -864.9245
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
