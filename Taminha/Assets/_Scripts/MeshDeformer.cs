@@ -21,10 +21,45 @@ namespace Melancia.Taminha {
 		int[] triangles;
 		int[] defaultTriangles;
 
-		const int pointCount = 32;
+		const int pointCount = 64;
 		const float eyesProp = 4;
 		const float eyesWidth = .15f;
 
+		static Vector2[] defaultPoints = {
+			new Vector2(-.061f,+.332f),
+			new Vector2(-.121f,+.284f),
+			new Vector2(-.175f,+.205f),
+			new Vector2(-.200f,+.142f),
+			new Vector2(-.228f,+.071f),
+			new Vector2(-.254f,-.019f),
+			new Vector2(-.274f,-.086f),
+			new Vector2(-.295f,-.151f),
+			new Vector2(-.314f,-.215f),
+			new Vector2(-.336f,-.297f),
+			new Vector2(-.280f,-.266f),
+			new Vector2(-.220f,-.276f),
+			new Vector2(-.153f,-.290f),
+			new Vector2(-.080f,-.251f),
+			new Vector2(-.013f,-.265f),
+			new Vector2(+.039f,-.291f),
+			new Vector2(+.092f,-.268f),
+			new Vector2(+.142f,-.257f),
+			new Vector2(+.189f,-.266f),
+			new Vector2(+.249f,-.270f),
+			new Vector2(+.313f,-.242f),
+			new Vector2(+.298f,-.188f),
+			new Vector2(+.268f,-.130f),
+			new Vector2(+.251f,-.085f),
+			new Vector2(+.234f,-.020f),
+			new Vector2(+.225f,+.045f),
+			new Vector2(+.216f,+.096f),
+			new Vector2(+.199f,+.183f),
+			new Vector2(+.168f,+.279f),
+			new Vector2(+.134f,+.331f),
+			new Vector2(+.083f,+.361f),
+			new Vector2(+.011f,+.357f),
+		};
+		
 		void Awake() {
 			points = new Vector2[pointCount+4];
 			vertices = new Vector3[pointCount+4];
@@ -59,38 +94,10 @@ namespace Melancia.Taminha {
 		}
 
 		public void ResetPoints() {
-			points[00] = new Vector2(-.061f,+.332f);
-			points[01] = new Vector2(-.121f,+.284f);
-			points[02] = new Vector2(-.175f,+.205f);
-			points[03] = new Vector2(-.200f,+.142f);
-			points[04] = new Vector2(-.228f,+.071f);
-			points[05] = new Vector2(-.254f,-.019f);
-			points[06] = new Vector2(-.274f,-.086f);
-			points[07] = new Vector2(-.295f,-.151f);
-			points[08] = new Vector2(-.314f,-.215f);
-			points[09] = new Vector2(-.336f,-.297f);
-			points[10] = new Vector2(-.280f,-.266f);
-			points[11] = new Vector2(-.220f,-.276f);
-			points[12] = new Vector2(-.153f,-.290f);
-			points[13] = new Vector2(-.080f,-.251f);
-			points[14] = new Vector2(-.013f,-.265f);
-			points[15] = new Vector2(+.039f,-.291f);
-			points[16] = new Vector2(+.092f,-.268f);
-			points[17] = new Vector2(+.142f,-.257f);
-			points[18] = new Vector2(+.189f,-.266f);
-			points[19] = new Vector2(+.249f,-.270f);
-			points[20] = new Vector2(+.313f,-.242f);
-			points[21] = new Vector2(+.298f,-.188f);
-			points[22] = new Vector2(+.268f,-.130f);
-			points[23] = new Vector2(+.251f,-.085f);
-			points[24] = new Vector2(+.234f,-.020f);
-			points[25] = new Vector2(+.225f,+.045f);
-			points[26] = new Vector2(+.216f,+.096f);
-			points[27] = new Vector2(+.199f,+.183f);
-			points[28] = new Vector2(+.168f,+.279f);
-			points[29] = new Vector2(+.134f,+.331f);
-			points[30] = new Vector2(+.083f,+.361f);
-			points[31] = new Vector2(+.011f,+.357f);
+			for (int a = 0; a < defaultPoints.Length; a++) {
+				points[a*2] = defaultPoints[a];
+				points[a*2+1] = Vector2.Lerp(defaultPoints[a],defaultPoints[(a+1)%defaultPoints.Length],.5f);
+			}
 			for (int a = 0; a < pointCount; a++) {
 				points[a] += spawnPos;
 			}

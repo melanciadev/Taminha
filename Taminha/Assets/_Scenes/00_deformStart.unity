@@ -112,11 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &406372052 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d,
-    type: 2}
-  m_PrefabInternal: {fileID: 2048707253}
 --- !u!1001 &589351384
 Prefab:
   m_ObjectHideFlags: 0
@@ -230,6 +225,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 607066171}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1062696192 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114635968178958450, guid: 9fa9cd18279b7434e8148b97df3c1c1d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2048707253}
+  m_Script: {fileID: 11500000, guid: d8026ab285ed09a4a9b7efd73a6b2d07, type: 3}
 --- !u!1001 &1074772901
 Prefab:
   m_ObjectHideFlags: 0
@@ -422,10 +423,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1611702027}
   mesh: {fileID: 1638940126}
-  cursor: {fileID: 406372052}
+  bg: {fileID: 2800000, guid: eab407fbcb4b6f74db4be5cfb0e7bc4f, type: 3}
+  cursor: {fileID: 1062696192}
   useTimer: 0
   timer: 0
-  scoreGoal: 0.9
+  scoreGoal: 0.85
   done: 0
 --- !u!4 &2001790672
 Transform:

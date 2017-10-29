@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: cursor
-  m_Shader: {fileID: 4800000, guid: 91315e9ce0bc5fa429df78901990f0ff, type: 3}
+  m_Shader: {fileID: 4800000, guid: ad80b37b726405e4ca6b0e8608dfe70b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
