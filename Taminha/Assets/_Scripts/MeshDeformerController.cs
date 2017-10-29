@@ -27,7 +27,7 @@ namespace Melancia.Taminha {
 			one = mesh.transform.localScale;
 			mesh.spawnPos = mesh.transform.InverseTransformPoint(transform.position);
 		}
-
+		
 		void Update() {
 			cursorPos += GameController.mouseDelta;
 			float h = cam.orthographicSize;
