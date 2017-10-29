@@ -425,7 +425,7 @@ MonoBehaviour:
   mesh: {fileID: 1638940126}
   bg: {fileID: 2800000, guid: eab407fbcb4b6f74db4be5cfb0e7bc4f, type: 3}
   cursor: {fileID: 1062696192}
-  useTimer: 0
+  timerMesh: {fileID: 0}
   timer: 0
   scoreGoal: 0.85
   done: 0
@@ -449,35 +449,35 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalPosition.z
       value: -9
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4047182830081636, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
+    - target: {fileID: 4407362816726528, guid: 9fa9cd18279b7434e8148b97df3c1c1d, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
