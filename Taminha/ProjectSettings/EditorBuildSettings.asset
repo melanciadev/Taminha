@@ -4,4 +4,49 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/00_deformStart.unity
+    guid: ce7cc95c6458a744f94dae8c56d825ba
+  - enabled: 1
+    path: Assets/_Scenes/01_posingFirst.unity
+    guid: 30a3902f037d4427c88727b4771133e8
+  - enabled: 1
+    path: Assets/_Scenes/02_deformFirst.unity
+    guid: b2b2485b59652415a826f6327933a3ff
+  - enabled: 1
+    path: Assets/_Scenes/03_animationHeadFirst.unity
+    guid: 186def054cee24e5692cf2667d293539
+  - enabled: 1
+    path: Assets/_Scenes/04_dialogueFirst.unity
+    guid: 74fc0c829caf548169649dc5432c21f9
+  - enabled: 1
+    path: Assets/_Scenes/05_posingSecond.unity
+    guid: c8644898dc8354323a9d9478566b39c7
+  - enabled: 1
+    path: Assets/_Scenes/06_deformSecond.unity
+    guid: f3802d7c80b1e49f4a10d40d1dc2dd2c
+  - enabled: 1
+    path: Assets/_Scenes/07_animationHeadSecond.unity
+    guid: 759ebff43e8e4409fac0de5aa4eb5b5a
+  - enabled: 1
+    path: Assets/_Scenes/08_dialogueSecond.unity
+    guid: becf38be04c7f4a469561174ee9e0ae8
+  - enabled: 1
+    path: Assets/_Scenes/09_posingThird.unity
+    guid: 2ccea1d6494184581b68ef99f6e4fe0c
+  - enabled: 1
+    path: Assets/_Scenes/10_deformThird.unity
+    guid: 1965c7ae2d2b4439ab913380c09350c1
+  - enabled: 1
+    path: Assets/_Scenes/11_animationHeadThird.unity
+    guid: 78d062d534ca84d1f8ead0ad3ceb93f5
+  - enabled: 1
+    path: Assets/_Scenes/12_dialogueThird.unity
+    guid: 56314780d5ddd46cd84d97595acba3f1
+  - enabled: 1
+    path: Assets/_Scenes/13_animationConclusion.unity
+    guid: 88cf3cebf20ad41dfa528d123e1fdee7
+  - enabled: 1
+    path: Assets/_Scenes/14_end.unity
+    guid: 2e8f275e0787d412ab27a82ed7546e4c
