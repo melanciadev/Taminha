@@ -9,6 +9,7 @@ namespace Melancia.Taminha {
 		public static Vector2 mouseDelta;
 
 		static Transform tr;
+		static AudioSource aud;
 
 		static Transform transitionTr;
 		static Transform lensTr;
@@ -71,12 +72,17 @@ namespace Melancia.Taminha {
 			}
 		}
 
+		public static void Play(AudioClip clip,float volume = 1) {
+			aud.PlayOneShot(clip,volume);
+		}
+
 		void Awake() {
 			if (tr != null) {
 				Destroy(gameObject);
 				return;
 			}
 			tr = transform;
+			aud = GetComponent<AudioSource>();
 			DontDestroyOnLoad(gameObject);
 
 			transitionTr = tr.Find("Transition");
@@ -124,7 +130,7 @@ namespace Melancia.Taminha {
 						laterRend.enabled = false;
 					} else if (!laterRend.enabled) {
 						laterRend.enabled = true;
-						AudioController.Play(Resources.Load<AudioClip>("bgm/later"));
+						Play(Resources.Load<AudioClip>("bgm/later"));
 					}
 				}
 				fadeRend.material.color = new Color(0,0,0,fadeTempo*fadeTempo);
