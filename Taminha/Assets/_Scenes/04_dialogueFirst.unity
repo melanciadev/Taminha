@@ -212,51 +212,36 @@ Prefab:
     - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1075.2467
+      value: 1237.9186
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2000.4385
+      value: 2289.633
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1125.2467
+      value: -1287.9186
       objectReference: {fileID: 0}
     - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1975.4385
+      value: -2264.633
       objectReference: {fileID: 0}
     - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1100.2467
+      value: -1262.9186
       objectReference: {fileID: 0}
     - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1701200356}
-    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: speakerAnimator
-      value: 
-      objectReference: {fileID: 854964498}
-    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: currentDialogue.speaker
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
   m_IsPrefabParent: 0
---- !u!95 &854964498 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95545354808492858, guid: c480cf9158da8452291be6685b9d577b,
-    type: 2}
-  m_PrefabInternal: {fileID: 300848448}
 --- !u!1 &1701200353
 GameObject:
   m_ObjectHideFlags: 0

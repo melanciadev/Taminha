@@ -93,7 +93,7 @@ namespace Melancia.Taminha
 		{
 			ResetDialogueTexts();
 
-			if (currentDialogueItem <= dialogueList.Count)
+			if (currentDialogueItem < dialogueList.Count)
 				ShowDialogueItem(dialogueList[currentDialogueItem]);
 			currentDialogueItem++;
 

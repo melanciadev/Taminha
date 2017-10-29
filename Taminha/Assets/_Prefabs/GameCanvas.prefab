@@ -391,28 +391,10 @@ MonoBehaviour:
   regularTextSpeed: 0.05
   fastTextSpeed: 0.01
   currentDialogue:
-    dialogueList:
-    - isGhostTalk: 0
-      dialogueString: oi
-      hasChoice: 0
-      dialogueChoice:
-        goodChoice: 
-        badChoice: 
-    - isGhostTalk: 0
-      dialogueString: oi2
-      hasChoice: 0
-      dialogueChoice:
-        goodChoice: 
-        badChoice: 
-    - isGhostTalk: 0
-      dialogueString: oi3
-      hasChoice: 0
-      dialogueChoice:
-        goodChoice: 
-        badChoice: 
-    speaker: 1
+    dialogueList: []
+    speaker: 0
   topBalloonAnimator: {fileID: 95506115665262686}
-  speakerAnimator: {fileID: 0}
+  speakerAnimator: {fileID: 95545354808492858}
   currentDialogueItem: 0
   currentStatus: 0
   dialogueUpText: {fileID: 114025012126234494}
