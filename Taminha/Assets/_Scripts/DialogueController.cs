@@ -56,6 +56,16 @@ namespace Melancia.Taminha
 		public float speedOutGood = 0.5f;
 		public float speedOutBad = 0.1f;
 
+		[Header("Audio")]
+		public AudioSource audioSourceBgm;
+		public AudioSource audioSourceSpeech;
+		public AudioClip dialogueBgm;
+		public AudioClip struggleBgm;
+		public AudioClip winSfx;
+		public AudioClip failSfx;
+		public AudioClip[] speechSfx;
+		int audioState = 0;
+
 		public void Start()
 		{
 			//Change to the right Balloon, speaker
@@ -63,10 +73,15 @@ namespace Melancia.Taminha
 			topBalloonAnimator.SetInteger("ballonIndex", speaker);
 			speakerAnimator.SetInteger("characterIndex", speaker);
 			backgroundImage.sprite = characterBackgrounds[speaker];
+			audioSourceSpeech.clip = speechSfx[speaker];
+			audioSourceSpeech.volume = 0;
+			audioSourceSpeech.Play();
 
 			EnterAnimation();
+			audioSourceBgm.clip = dialogueBgm;
+			audioSourceBgm.Play();
 		}
-
+		
 		public void EnterAnimation()
 		{
 			//Start positions
@@ -112,6 +127,7 @@ namespace Melancia.Taminha
 			{
 				if (inputSelectSide != 0 && Input.GetMouseButtonUp(0)) {
 					isGoodPath = inputSelectSide < 0;
+					AudioController.Play(isGoodPath ? failSfx : winSfx,.2f);
 					isAfterChoice = true;
 					currentStatus = DialogueStatus.None;
 					ShowCurrentDialogue(currentDialogue.dialogueList);
@@ -125,13 +141,17 @@ namespace Melancia.Taminha
 				{
 					if(isGoodPath)
 					{
-						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutGood);
+						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutGood).OnComplete(LeaveScene);
 					}
 					else
 					{
-						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutBad);
+						speakerImage.rectTransform.DOAnchorPosX(startSpeakerPosition, speedOutBad).OnComplete(LeaveScene);
 					}
 				});
+		}
+
+		void LeaveScene() {
+			GameController.NextScene(Transition.Later);
 		}
 
 		//Show all the act
@@ -217,15 +237,28 @@ namespace Melancia.Taminha
 		//Call the right function depending if it`s a Regular or Choice one
 		public void ShowDialogueItem(DialogueItem dialogueItem)
 		{
-			if (dialogueItem.hasChoice)
-				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueString, dialogueItem.dialogueChoice));
-			else
+			audioSourceSpeech.volume = 0;
+			if (dialogueItem.hasChoice) {
+				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueString,dialogueItem.dialogueChoice));
+				if (audioState == 0) {
+					audioState = 1;
+					audioSourceBgm.clip = struggleBgm;
+					audioSourceBgm.time = 0;
+					audioSourceBgm.Play();
+				}
+			} else {
 				StartCoroutine(StartRegularDialogue(dialogueItem.dialogueString));
+				if (audioState == 1) {
+					audioState = 2;
+					audioSourceBgm.Stop();
+				}
+			}
 		}
 
 		//For the Regular Dialogues
 		public IEnumerator StartRegularDialogue(string dialogue)
 		{
+			audioSourceSpeech.volume = 1;
 			currentStatus = DialogueStatus.Showing;
 			currentTextSpeed = regularTextSpeed;
 
@@ -252,6 +285,7 @@ namespace Melancia.Taminha
 			}
 
 			currentStatus = DialogueStatus.Waiting;
+			audioSourceSpeech.volume = 0;
 			yield return null;
 		}
 
