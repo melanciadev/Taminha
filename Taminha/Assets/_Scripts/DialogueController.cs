@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Melancia.Taminha
 {
@@ -23,10 +24,12 @@ namespace Melancia.Taminha
 		[Header("Dialogue")]
 		public int currentDialogueItem;
 		public DialogueStatus currentStatus = DialogueStatus.None;
+		public Text dialogueText;
+		public bool isLastDialogue = false;
 
-		[Header("Dialogue regular text")]
-		public Text dialogueUpText;
-		public Text dialogueDownText;
+		[Header("Choices Made")]
+		public bool isAfterChoice = false;
+		public bool isGoodPath = false;
 
 		[Header("Dialogue choice text")]
 		public Image dialogueChoiceDownImage;
@@ -62,6 +65,30 @@ namespace Melancia.Taminha
 					ShowCurrentDialogue(currentDialogue.dialogueList);
 				}
 			}
+
+			//When a choice is being made...
+			else if(currentStatus == DialogueStatus.Choosing)
+			{
+				//TODO -- CRAZY MOUSE
+
+
+				//TESTE -TEMP
+				if (Input.GetKeyUp (KeyCode.G)) {
+					isGoodPath = true;
+					isAfterChoice = true;
+					currentStatus = DialogueStatus.None;
+					ShowCurrentDialogue(currentDialogue.dialogueList);
+				}
+
+				if (Input.GetKeyUp (KeyCode.B)) {
+					isGoodPath = false;
+					isAfterChoice = true;
+					currentStatus = DialogueStatus.None;
+					ShowCurrentDialogue(currentDialogue.dialogueList);
+				}
+
+				//TESTE -TEMP
+			}
 		}
 			
 		//Show all the act
@@ -83,7 +110,6 @@ namespace Melancia.Taminha
 				break;
 			}
 
-
 			currentDialogueItem = 0;
 			ShowCurrentDialogue (currentDialogue.dialogueList);
 		}
@@ -91,39 +117,78 @@ namespace Melancia.Taminha
 		//Show the current dialogue
 		public void ShowCurrentDialogue(List<DialogueItem> dialogueList)
 		{
-			ResetDialogueTexts();
+			if (!isLastDialogue) {
+				//Reset all
+				ResetDialogueTexts ();
 
-			if (currentDialogueItem < dialogueList.Count)
-				ShowDialogueItem(dialogueList[currentDialogueItem]);
-			currentDialogueItem++;
+				//Check if it is happening after a choice. 
+				if (isAfterChoice) {
+					//Check if it is a good one
+					if (isGoodPath) {
+						//And if the next one is, play it
+						if (dialogueList [currentDialogueItem].isGoodPath) {
+							ShowDialogueItem (dialogueList [currentDialogueItem]);
+						} else {
+							currentDialogueItem++;
+							if (currentDialogueItem == dialogueList.Count)
+								isLastDialogue = true;
+							ShowCurrentDialogue (dialogueList);
+						}
+					}
 
-			//TODO - What happens when the last dialog is made?
+					//Check if it is a bad one
+					else {
+						//And if the next one is, play it
+						if (!dialogueList [currentDialogueItem].isGoodPath) {
+							ShowDialogueItem (dialogueList [currentDialogueItem]);
+						} else {
+							currentDialogueItem++;
+							if (currentDialogueItem == dialogueList.Count)
+								isLastDialogue = true;
+							ShowCurrentDialogue (dialogueList);
+						}
+					}
+				} 
+
+				//If it is not happening after a choice
+				else {
+					ShowDialogueItem (dialogueList [currentDialogueItem]);
+
+					currentDialogueItem++;
+					if (currentDialogueItem == dialogueList.Count)
+						isLastDialogue = true;
+				 
+				}
+			}
+
+			else {
+				print("FIM");
+			}
 		}
 	
-		//Call the right function depending if it`s a Regular or choice one
+		//Call the right function depending if it`s a Regular or Choice one
 		public void ShowDialogueItem(DialogueItem dialogueItem)
 		{
 			if (dialogueItem.hasChoice)
-				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueChoice));
+				StartCoroutine(StartChoiceDialogue(dialogueItem.dialogueString, dialogueItem.dialogueChoice));
 			else
-				StartCoroutine(StartRegularDialogue(dialogueItem.isGhostTalk, dialogueItem.dialogueString));
+				StartCoroutine(StartRegularDialogue(dialogueItem.dialogueString));
 		}
 
 		//For the Regular Dialogues
-		public IEnumerator StartRegularDialogue(bool isGhostTalk, string dialogue)
+		public IEnumerator StartRegularDialogue(string dialogue)
 		{
 			currentStatus = DialogueStatus.Showing;
 			currentTextSpeed = regularTextSpeed;
 
 			int currentChar = 0;
 			string newString = "";
-			Text currentText = isGhostTalk ? dialogueDownText : dialogueUpText;
-			currentText.text = newString;
+			dialogueText.text = newString;
 
 			while (dialogue.Length - 1 >= currentChar)
 			{
 				newString += dialogue[currentChar];
-				currentText.text = newString;
+				dialogueText.text = newString;
 				yield return new WaitForSeconds(currentTextSpeed);
 
 				//Wait twice as long when a Comma is printed.
@@ -139,27 +204,76 @@ namespace Melancia.Taminha
 		}
 
 		//For the choices Dialogues
-		public IEnumerator StartChoiceDialogue(Choice choiceOption)
+		public IEnumerator StartChoiceDialogue(string dialogue, Choice choiceOption)
 		{
+			#region Show
+			//It is Showing
+			currentStatus = DialogueStatus.Showing;
+
+			//Show the Dialogue
+			var currentChar = 0;
+			var newString = "";
+			currentTextSpeed = regularTextSpeed;
+			dialogueText.text = newString;
+			while (dialogue.Length - 1 >= currentChar)
+			{
+				newString += dialogue[currentChar];
+				dialogueText.text = newString;
+				yield return new WaitForSeconds(currentTextSpeed);
+
+				//Wait twice as long when a Comma is printed.
+				if (dialogue [currentChar] == ',') {
+					yield return new WaitForSeconds(currentTextSpeed);
+				}
+
+				currentChar++;
+			}
+			#endregion
+
+			#region Choose
+			//It is Choosing
 			currentStatus = DialogueStatus.Choosing;
 
-			dialogueChoiceDownImage.gameObject.SetActive(true);
-			dialogueGoodChoiceButtonText.text = choiceOption.goodChoice;
-			dialogueBadChoiceButtonText.text = choiceOption.badChoice;
+			//Show the choice Image
+			dialogueChoiceDownImage.rectTransform.DOScale(1, 0.3f);
 
-			yield return null;
+			//Show the Good Choice
+			currentChar = 0;
+			newString = "";
+			dialogueGoodChoiceButtonText.text = newString;
+			while (choiceOption.goodChoice.Length - 1 >= currentChar)
+			{
+				newString += choiceOption.goodChoice[currentChar];
+				dialogueGoodChoiceButtonText.text = newString;
+				yield return new WaitForSeconds(currentTextSpeed);
 
-			//TODO - ESCOLHA DA RESPOSTA
+				currentChar++;
+			}
+
+			//Show the Bad Choice
+			currentChar = 0;
+			newString = "";
+			dialogueBadChoiceButtonText.text = newString;
+			while (choiceOption.badChoice.Length - 1 >= currentChar)
+			{
+				newString += choiceOption.badChoice[currentChar];
+				dialogueBadChoiceButtonText.text = newString;
+				yield return new WaitForSeconds(currentTextSpeed);
+
+				currentChar++;
+			}
+			#endregion
 		}
-
+			
 		//Reset all content from the dialogues boxes
 		public void ResetDialogueTexts()
 		{
-			dialogueUpText.text = "";
-			dialogueDownText.text = "";
+			dialogueText.text = "";
 			dialogueGoodChoiceButtonText.text = "";
 			dialogueBadChoiceButtonText.text = "";
-			dialogueChoiceDownImage.gameObject.SetActive(false);
+
+			if(dialogueChoiceDownImage.rectTransform.localScale.x != 0)
+			dialogueChoiceDownImage.rectTransform.DOScale(0, 0.3f);
 		}
 	}
 }
