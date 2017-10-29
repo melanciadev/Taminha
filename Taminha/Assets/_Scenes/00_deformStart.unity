@@ -571,7 +571,7 @@ MonoBehaviour:
   mesh: {fileID: 1638940126}
   bg: {fileID: 2800000, guid: eab407fbcb4b6f74db4be5cfb0e7bc4f, type: 3}
   cursor: {fileID: 1062696192}
-  timerMesh: {fileID: 0}
+  useTimer: 0
   timer: 0
   scoreGoal: 0.85
   done: 0
