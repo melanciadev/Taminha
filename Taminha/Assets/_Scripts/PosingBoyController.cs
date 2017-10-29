@@ -13,14 +13,16 @@ namespace Melancia.Taminha {
 		void Start() {
 			var pos = transform.position;
 			boy.boy.transform.position = new Vector3(pos.x,pos.y,0);
-			boy.bg.material.mainTexture = bg;
 			boy.tex = tex;
 			if (deform != null) {
+				boy.bg.enabled = false;
 				var s = boy.boy.transform.localScale;
 				s = new Vector3(s.x*1.8f,s.y*1.8f,1);
 				boy.boy.transform.localScale = s;
 				deform.transform.localScale = new Vector3(s.y,s.y,1);
 				boy.boy.transform.position = new Vector3(0,0,5);
+			} else {
+				boy.bg.material.mainTexture = bg;
 			}
 		}
 
