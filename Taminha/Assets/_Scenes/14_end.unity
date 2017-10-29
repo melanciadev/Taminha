@@ -282,8 +282,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4559f354ec8e3d94fae6f7b53da23438, type: 3}
   - {fileID: 2800000, guid: 4b4bc1d680ad8c64c9bc35fb3a19568b, type: 3}
   - {fileID: 2800000, guid: 5402d34483a63e84d82dbf4e63e9172e, type: 3}
-  aud: {fileID: 0}
-  lockTransition: {fileID: 0}
+  aud: {fileID: 720714002}
+  lockTransition: {fileID: 8300000, guid: 81acb37cbcad2604aa8f64e0cd739940, type: 3}
+  lastScene: 1
 --- !u!114 &720713999
 MonoBehaviour:
   m_ObjectHideFlags: 0

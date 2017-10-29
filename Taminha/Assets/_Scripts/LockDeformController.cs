@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Melancia.Taminha {
-	public class DeformStartScene:MonoBehaviour {
+	public class LockDeformController:MonoBehaviour {
 		public MeshDeformerController mesh;
 		public Camera cam;
 		public Renderer lockRend;
 		public Texture2D[] lockTex;
 		public AudioSource aud;
 		public AudioClip lockTransition;
+		public bool lastScene = false;
 
 		float transition = 0;
 		bool done = false;
@@ -20,7 +21,11 @@ namespace Melancia.Taminha {
 					done = true;
 					aud.Stop();
 					GameController.Play(lockTransition,.5f);
-					GameController.NextScene(Transition.Fade,2,.5f);
+					if (lastScene) {
+						GameController.GoToScene(0,Transition.Fade,2,1);
+					} else {
+						GameController.NextScene(Transition.Fade,2,.5f);
+					}
 				}
 				transition += Time.deltaTime*.5f;
 				float t = transition*transition;
