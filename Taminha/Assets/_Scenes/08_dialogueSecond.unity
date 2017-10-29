@@ -256,11 +256,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: currentDialogue
-      value: 
-      objectReference: {fileID: 1515804609}
     - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_Camera
@@ -269,39 +264,48 @@ Prefab:
     - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -864.9245
+      value: -892.1346
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1533.7546
+      value: 1577.1282
       objectReference: {fileID: 0}
     - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -864.9245
+      value: -892.1346
+      objectReference: {fileID: 0}
+    - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1487.1282
       objectReference: {fileID: 0}
     - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 813.9245
+      value: -298.13458
       objectReference: {fileID: 0}
     - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1533.7546
+      value: -1582.1282
       objectReference: {fileID: 0}
     - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -864.9245
+      value: -892.1346
       objectReference: {fileID: 0}
-    - target: {fileID: 114798001781691654, guid: c480cf9158da8452291be6685b9d577b,
+    - target: {fileID: 224992771500133980, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
-      propertyPath: m_Sprite
+      propertyPath: m_LocalPosition.x
+      value: -560
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: currentDialogue
       value: 
-      objectReference: {fileID: 21300000, guid: 6089509b45f3e468881b0994ca672704,
-        type: 3}
+      objectReference: {fileID: 1515804609}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
   m_IsPrefabParent: 0
