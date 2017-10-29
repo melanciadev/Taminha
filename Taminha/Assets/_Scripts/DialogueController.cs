@@ -128,6 +128,7 @@ namespace Melancia.Taminha
 				if (inputSelectSide != 0 && Input.GetMouseButtonUp(0)) {
 					isGoodPath = inputSelectSide < 0;
 					GameController.Play(isGoodPath ? failSfx : winSfx,.2f);
+					GameController.goodChars += isGoodPath ? 1 : 0;
 					isAfterChoice = true;
 					currentStatus = DialogueStatus.None;
 					ShowCurrentDialogue(currentDialogue.dialogueList);

@@ -15,6 +15,10 @@ namespace Melancia.Taminha {
 		float transition = 0;
 		bool done = false;
 
+		void Start() {
+			GameController.goodChars = 0;
+		}
+		
 		void Update() {
 			if (mesh.done) {
 				if (!done) {
