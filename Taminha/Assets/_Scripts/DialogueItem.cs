@@ -14,10 +14,11 @@ namespace Melancia.Taminha
 	[System.Serializable]
 	public class DialogueItem
 	{
-		public bool isGhostTalk = false;
 		public string dialogueString;
 		public bool hasChoice = false;
 		public Choice dialogueChoice;
+		public bool isAfterChoice = false;
+		public bool isGoodPath = false;
 	}
 
 	[System.Serializable]
