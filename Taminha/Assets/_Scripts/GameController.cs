@@ -80,7 +80,7 @@ namespace Melancia.Taminha {
 		}
 
 		void Update() {
-			const float vel = .5f;
+			const float vel = .1f;
 			mouseDelta = new Vector2(Input.GetAxis("x")*vel,Input.GetAxis("y")*vel);
 		}
 
