@@ -10,7 +10,8 @@ namespace Melancia.Taminha
 		None,
 		Showing,
 		Waiting,
-		Choosing
+		Choosing,
+		End
 	}
 
 	[System.Serializable]
