@@ -391,6 +391,11 @@ MonoBehaviour:
   regularTextSpeed: 0.05
   fastTextSpeed: 0.01
   currentDialogue: {fileID: 0}
+  backgroundImage: {fileID: 114867126584502204}
+  characterBackgrounds:
+  - {fileID: 21300000, guid: 3b9c225ac4952f744987c1255efc63c4, type: 3}
+  - {fileID: 21300000, guid: e5dee44f6a532d54d920e2f4b6b3cc3a, type: 3}
+  - {fileID: 21300000, guid: 970a7eead87a12c44bc2203d78e057ae, type: 3}
   topBalloonAnimator: {fileID: 95506115665262686}
   speakerAnimator: {fileID: 95545354808492858}
   currentDialogueItem: 0
@@ -402,6 +407,7 @@ MonoBehaviour:
   dialogueChoiceDownImage: {fileID: 114397856650906164}
   dialogueGoodChoiceButtonText: {fileID: 114311303027023936}
   dialogueBadChoiceButtonText: {fileID: 114167166093952258}
+  inputSelectSide: 0
 --- !u!114 &114311303027023936
 MonoBehaviour:
   m_ObjectHideFlags: 1

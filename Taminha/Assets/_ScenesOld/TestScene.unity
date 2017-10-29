@@ -140,38 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueList:
-  - dialogueString: "Oie, n\xE3o ta um dia lindo? Eu acho maneiro! Me lembra as flores
-      no jardim da minha v\xF3\u2026"
-    hasChoice: 0
-    dialogueChoice:
-      goodChoice: 
-      badChoice: 
-    isAfterChoice: 0
-    isGoodPath: 0
-  - dialogueString: "Ah! Voc\xEA viu o gatinho que o professor adotou? \xC9 lindin
-      demais! Eu queria fazer carinho nele, e am\xE1-lo, pra sempre!"
-    hasChoice: 0
-    dialogueChoice:
-      goodChoice: 
-      badChoice: 
-    isAfterChoice: 0
-    isGoodPath: 0
-  - dialogueString: "E aquele alarme ontem??? Mds, voc\xEA n\xE3o odeia quando esses
-      alarmes ficam a noite toda tocando? Nossa, eu odeio muito!"
-    hasChoice: 0
-    dialogueChoice:
-      goodChoice: 
-      badChoice: 
-    isAfterChoice: 0
-    isGoodPath: 0
-  - dialogueString: "Mas\u2026 e voc\xEA? O que c\xEA curte? Eu acho que tu gosta
-      das coisas maneiras, que nem eu. \xC9 isso que o seu rosto me diz!"
-    hasChoice: 0
-    dialogueChoice:
-      goodChoice: 
-      badChoice: 
-    isAfterChoice: 0
-    isGoodPath: 0
   - dialogueString: "Ah, n\xE3o seja t\xEDmido, pode falar comigo!"
     hasChoice: 1
     dialogueChoice:
@@ -328,51 +296,51 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224992771500133980, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -560
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -894.3452
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -560.84076
-      objectReference: {fileID: 0}
-    - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 509.84076
-      objectReference: {fileID: 0}
-    - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 894.3452
-      objectReference: {fileID: 0}
-    - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -560.84076
-      objectReference: {fileID: 0}
-    - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -560.84076
-      objectReference: {fileID: 0}
-    - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1701200356}
     - target: {fileID: 114225525885585612, guid: c480cf9158da8452291be6685b9d577b,
         type: 2}
       propertyPath: currentDialogue
       value: 
       objectReference: {fileID: 161608380}
+    - target: {fileID: 223744709475722562, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1701200356}
+    - target: {fileID: 224244621480657412, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -892.1346
+      objectReference: {fileID: 0}
+    - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1582.1282
+      objectReference: {fileID: 0}
+    - target: {fileID: 224647163284663956, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -892.1346
+      objectReference: {fileID: 0}
+    - target: {fileID: 224923137625039678, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 841.1346
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1582.1282
+      objectReference: {fileID: 0}
+    - target: {fileID: 224313755039806986, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -892.1346
+      objectReference: {fileID: 0}
+    - target: {fileID: 224992771500133980, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -560
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
   m_IsPrefabParent: 0

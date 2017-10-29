@@ -17,6 +17,10 @@ namespace Melancia.Taminha
 		[Header("Dialogue Collection")]
 		public Dialogue currentDialogue;
 
+		[Header("Dialogue background")]
+		public Image backgroundImage;
+		public Sprite[] characterBackgrounds;
+
 		[Header("Dialogue animator")]
 		public Animator topBalloonAnimator;
 		public Animator speakerAnimator;
@@ -35,6 +39,9 @@ namespace Melancia.Taminha
 		public Image dialogueChoiceDownImage;
 		public Text dialogueGoodChoiceButtonText; //TEMP
 		public Text dialogueBadChoiceButtonText; //TEMP
+
+		[Header("Input")]
+		public int inputSelectSide = 0;
 
 
 		//TESTE -TEMP
@@ -69,25 +76,12 @@ namespace Melancia.Taminha
 			//When a choice is being made...
 			else if(currentStatus == DialogueStatus.Choosing)
 			{
-				//TODO -- CRAZY MOUSE
-
-
-				//TESTE -TEMP
-				if (Input.GetKeyUp (KeyCode.G)) {
-					isGoodPath = true;
+				if (inputSelectSide != 0 && Input.GetMouseButtonUp(0)) {
+					isGoodPath = inputSelectSide < 0;
 					isAfterChoice = true;
 					currentStatus = DialogueStatus.None;
 					ShowCurrentDialogue(currentDialogue.dialogueList);
 				}
-
-				if (Input.GetKeyUp (KeyCode.B)) {
-					isGoodPath = false;
-					isAfterChoice = true;
-					currentStatus = DialogueStatus.None;
-					ShowCurrentDialogue(currentDialogue.dialogueList);
-				}
-
-				//TESTE -TEMP
 			}
 		}
 			
@@ -95,21 +89,11 @@ namespace Melancia.Taminha
 		public void ShowAct(Dialogue currentDialogue)
 		{
 			//Change to the right Balloon and speaker
-			switch (currentDialogue.speaker) {
-			case Character.ChitchatGirl:
-				topBalloonAnimator.SetInteger("ballonIndex", 0);
-				speakerAnimator.SetInteger("characterIndex", 0);
-				break;
-			case Character.CoolProfessor:
-				topBalloonAnimator.SetInteger("ballonIndex", 1);
-				speakerAnimator.SetInteger("characterIndex", 1);
-				break;
-			case Character.TennisClubProfessor:
-				topBalloonAnimator.SetInteger("ballonIndex", 2);
-				speakerAnimator.SetInteger("characterIndex", 2);
-				break;
-			}
-
+			int speaker = (int)currentDialogue.speaker;
+			topBalloonAnimator.SetInteger("ballonIndex", speaker);
+			speakerAnimator.SetInteger("characterIndex", speaker);
+			backgroundImage.sprite = characterBackgrounds[speaker];
+			
 			currentDialogueItem = 0;
 			ShowCurrentDialogue (currentDialogue.dialogueList);
 		}
