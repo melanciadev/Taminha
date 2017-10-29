@@ -395,6 +395,7 @@ MonoBehaviour:
     isAfterChoice: 1
     isGoodPath: 0
   speaker: 2
+  showLaterScreen: 0
 --- !u!4 &1288842137
 Transform:
   m_ObjectHideFlags: 0

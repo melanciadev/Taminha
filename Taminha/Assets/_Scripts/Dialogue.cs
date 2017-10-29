@@ -25,5 +25,6 @@ namespace Melancia.Taminha
 	{
 		public List<DialogueItem> dialogueList;
 		public Character speaker;
+		public bool showLaterScreen = true;
 	}
 }

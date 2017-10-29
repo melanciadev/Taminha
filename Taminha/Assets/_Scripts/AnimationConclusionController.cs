@@ -14,7 +14,7 @@ namespace Melancia.Taminha {
 		bool done = false;
 		
 		void Start() {
-			int c = 3;// GameController.goodChars;
+			int c = GameController.goodChars;
 			switch (c) {
 				case 0:
 					goodSprite.enabled = false;

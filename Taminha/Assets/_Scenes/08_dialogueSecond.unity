@@ -420,7 +420,15 @@ MonoBehaviour:
       badChoice: 
     isAfterChoice: 1
     isGoodPath: 0
+  - dialogueString: '.........................'
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
   speaker: 1
+  showLaterScreen: 1
 --- !u!4 &1515804610
 Transform:
   m_ObjectHideFlags: 0

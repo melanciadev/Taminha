@@ -152,7 +152,11 @@ namespace Melancia.Taminha
 		}
 
 		void LeaveScene() {
-			GameController.NextScene(Transition.Later);
+			if (currentDialogue.showLaterScreen) {
+				GameController.NextScene(Transition.Later);
+			} else {
+				GameController.NextScene(Transition.Fade,1,2);
+			}
 		}
 
 		//Show all the act
