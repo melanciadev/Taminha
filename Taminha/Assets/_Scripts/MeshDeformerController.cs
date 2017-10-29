@@ -90,7 +90,7 @@ namespace Melancia.Taminha {
 				dragging = false;
 				updateScore = true;
 			}
-			mouseVelocity = Mathf.Lerp(mouseVelocity,Mathf.Clamp(newVelocity,0,2),Time.deltaTime*10);
+			mouseVelocity = Mathf.Lerp(mouseVelocity,Mathf.Clamp(newVelocity*15,0,2),Time.deltaTime*10);
 			aud.pitch = mouseVelocity*.4f+.4f;
 			aud.volume = Mathf.Clamp01(mouseVelocity*4);
 			resetSeed -= Time.deltaTime*6;

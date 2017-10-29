@@ -9,10 +9,12 @@ namespace Melancia.Taminha {
 		public static Vector2 mouseDelta;
 
 		static Transform tr;
+		static AudioSource aud;
 
 		static Transform transitionTr;
 		static Transform lensTr;
 		static Renderer fadeRend;
+		static Renderer laterRend;
 
 		static int sceneIndex = 0;
 		static int nextScene = -1;
@@ -21,6 +23,7 @@ namespace Melancia.Taminha {
 		static float fadeTempo = 0;
 		static float fadeFromVel = 0;
 		static float fadeToVel = 0;
+		static float laterTempo = 0;
 
 		public static void NextScene(Transition transition = Transition.None,float durationFrom = 0,float durationTo = 0) {
 			GoToScene(sceneIndex+1,transition,durationFrom,durationTo);
@@ -40,7 +43,6 @@ namespace Melancia.Taminha {
 					break;
 				case Transition.Fade:
 					if (Mathf.Approximately(durationFrom,0)) {
-						GoToScene(index);
 						if (Mathf.Approximately(durationTo,0)) {
 							fadeTempo = 0;
 							fadeRend.gameObject.SetActive(false);
@@ -58,7 +60,20 @@ namespace Melancia.Taminha {
 						fadeRend.gameObject.SetActive(true);
 					}
 					break;
+				case Transition.Later:
+					fadeFromVel = 2;
+					fadeToVel = 2;
+					fading = true;
+					nextScene = index;
+					fadeTempo = 0;
+					fadeRend.gameObject.SetActive(true);
+					laterTempo = 6;
+					break;
 			}
+		}
+
+		public static void Play(AudioClip clip,float volume = 1) {
+			aud.PlayOneShot(clip,volume);
 		}
 
 		void Awake() {
@@ -67,11 +82,13 @@ namespace Melancia.Taminha {
 				return;
 			}
 			tr = transform;
+			aud = GetComponent<AudioSource>();
 			DontDestroyOnLoad(gameObject);
 
 			transitionTr = tr.Find("Transition");
 			lensTr = transitionTr.Find("Lens");
 			fadeRend = transitionTr.Find("Fade").GetComponent<Renderer>();
+			laterRend = fadeRend.transform.Find("Later").GetComponent<Renderer>();
 
 			sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -101,11 +118,19 @@ namespace Melancia.Taminha {
 				fadeTempo += Time.deltaTime*fadeFromVel;
 				if (fadeTempo >= 1) {
 					fadeTempo = 1;
-					fading = false;
-					GoToScene(nextScene);
-					if (Mathf.Approximately(fadeToVel,0)) {
-						fadeTempo = 0;
-						fadeRend.gameObject.SetActive(false);
+					laterTempo -= Time.deltaTime;
+					if (laterTempo <= 0) {
+						laterTempo = 0;
+						fading = false;
+						GoToScene(nextScene);
+						if (Mathf.Approximately(fadeToVel,0)) {
+							fadeTempo = 0;
+							fadeRend.gameObject.SetActive(false);
+						}
+						laterRend.enabled = false;
+					} else if (!laterRend.enabled) {
+						laterRend.enabled = true;
+						Play(Resources.Load<AudioClip>("bgm/later"));
 					}
 				}
 				fadeRend.material.color = new Color(0,0,0,fadeTempo*fadeTempo);
@@ -125,5 +150,6 @@ namespace Melancia.Taminha {
 		None,
 		Lens,
 		Fade,
+		Later,
 	}
 }

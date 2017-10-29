@@ -19,7 +19,7 @@ namespace Melancia.Taminha {
 				if (!done) {
 					done = true;
 					aud.Stop();
-					AudioController.Play(lockTransition,.5f);
+					GameController.Play(lockTransition,.5f);
 					GameController.NextScene(Transition.Fade,2,.5f);
 				}
 				transition += Time.deltaTime*.5f;
