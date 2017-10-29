@@ -8,7 +8,7 @@ namespace Melancia.Taminha {
 		public MeshDeformer mesh;
 		public Texture2D bg;
 		public QuadCursor cursor;
-		public bool useTimer = true;
+		public TextMesh timerMesh;
 		public float timer = 0;
 		public float scoreGoal = .9f;
 		
@@ -92,14 +92,16 @@ namespace Melancia.Taminha {
 				if (mesh.ApplyMesh()) resizing = 1;
 			}
 			if (!done) {
-				if (useTimer) {
+				if (timerMesh != null) {
 					timer -= Time.deltaTime;
 					if (timer <= 0) {
 						timer = 0;
 						GameController.deformScore = mesh.GetScore();
+						Debug.Log(GameController.deformScore);
 						resizing = 1;
 						done = true;
 					}
+					timerMesh.text = Mathf.CeilToInt(timer).ToString();
 				} else if (updateScore) {
 					var score = mesh.GetScore();
 					Debug.Log(score);
