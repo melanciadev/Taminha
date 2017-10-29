@@ -249,6 +249,12 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -864.9245
       objectReference: {fileID: 0}
+    - target: {fileID: 114798001781691654, guid: c480cf9158da8452291be6685b9d577b,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6089509b45f3e468881b0994ca672704,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c480cf9158da8452291be6685b9d577b, type: 2}
   m_IsPrefabParent: 0
@@ -279,8 +285,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5c6ac60cae04d88af5eaf3f56a3b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueList: []
-  speaker: 0
+  dialogueList:
+  - dialogueString: "Ol\xE1, tu ta pronto pra aprender?? Eu espero que esteja, ALUNO!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Ontem n\xF3s j\xE1 aprendemos um mont\xE3o de coisas, e talvez
+      voc\xEA tenha aprendido bastante, ALUNO!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Mas hoje, hoje \xE9 o dia que sua mente vai expandir com meus
+      ensinamentos, ALUNO!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: Com certeza, eu aprecio e respeito igualmente o intelecto de cada
+      um dos meus pupilos. Inclusive o seu, ALUNO!
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Mas e a\xED, voc\xEA fez seu dever de casa, ALUNO?"
+    hasChoice: 1
+    dialogueChoice:
+      goodChoice: Sim, claro que fiz, eu sou um meninu de verdade!
+      badChoice: "N\xC3O FIZ N\xC3O, PROFESSOR! SAI DAQUI!"
+    isAfterChoice: 0
+    isGoodPath: 0
+  - dialogueString: "Voc\xEA fez \xE9?! Muito bom! Eu sabia que havia dedica\xE7\xE3o
+      em voc\xEA, ALUNO!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Talvez voc\xEA devesse entrar em um dos Clubinhos da escola!
+      Tenho certeza que voc\xEA se daria bem, ALUNO!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "Agora vou l\xE1 dar aten\xE7\xE3o aos outros pupilos. O c\xE9u
+      \xE9 o limite, MENINU! "
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 1
+  - dialogueString: "O QU\xCA?! VOC\xCA SE ESQUECEU DO SEU DEVER DE CASA?!"
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  - dialogueString: "ENT\xC3O TA N\xC9\u2026 To bem triste agora. Eu acreditei em
+      voc\xEA, aluno."
+    hasChoice: 0
+    dialogueChoice:
+      goodChoice: 
+      badChoice: 
+    isAfterChoice: 1
+    isGoodPath: 0
+  speaker: 1
 --- !u!4 &1515804610
 Transform:
   m_ObjectHideFlags: 0

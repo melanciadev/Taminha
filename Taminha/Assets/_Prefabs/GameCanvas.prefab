@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -303,11 +303,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: 8fe1e6300f1134cecbe3e11a6652068b, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 45
+    m_MinSize: 6
     m_MaxSize: 70
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8fe1e6300f1134cecbe3e11a6652068b, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -390,11 +390,6 @@ MonoBehaviour:
   slowTextSpeed: 0.1
   regularTextSpeed: 0.05
   fastTextSpeed: 0.01
-  backgroundImage: {fileID: 114867126584502204}
-  backgroundSprites:
-  - {fileID: 21300000, guid: 3b9c225ac4952f744987c1255efc63c4, type: 3}
-  - {fileID: 21300000, guid: 970a7eead87a12c44bc2203d78e057ae, type: 3}
-  - {fileID: 21300000, guid: e5dee44f6a532d54d920e2f4b6b3cc3a, type: 3}
   currentDialogue: {fileID: 0}
   topBalloonAnimator: {fileID: 95506115665262686}
   speakerAnimator: {fileID: 95545354808492858}
@@ -427,7 +422,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8fe1e6300f1134cecbe3e11a6652068b, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
