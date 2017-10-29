@@ -6,14 +6,14 @@ namespace Melancia.Taminha {
 	public class MeshDeformerController:MonoBehaviour {
 		public Camera cam;
 		public MeshDeformer mesh;
-		public Transform cursor;
+		public Texture2D bg;
+		public QuadCursor cursor;
 		public bool useTimer = true;
 		public float timer = 0;
 		public float scoreGoal = .9f;
 		
 		public bool done = false;
-
-		Vector2 cursorPos;
+		
 		Vector2 prevPos;
 		int mouseState = 0;
 		bool deforming = false;
@@ -23,20 +23,13 @@ namespace Melancia.Taminha {
 		Vector3 one;
 		
 		void Start() {
-			cursorPos = Vector2.zero;
 			one = mesh.transform.localScale;
 			mesh.spawnPos = mesh.transform.InverseTransformPoint(transform.position);
+			cursor.cam = cam;
+			mesh.bg = bg;
 		}
 		
 		void Update() {
-			cursorPos += GameController.mouseDelta;
-			float h = cam.orthographicSize;
-			float w = h*CameraController.idealProp;
-			if (cursorPos.x < -w) cursorPos.x = -w;
-			if (cursorPos.x > w) cursorPos.x = w;
-			if (cursorPos.y < -h) cursorPos.y = -h;
-			if (cursorPos.y > h) cursorPos.y = h;
-			cursor.localPosition = new Vector3(cursorPos.x,cursorPos.y,cursor.localPosition.z);
 			if (resizing > 0) {
 				mouseState = 0;
 				resizing -= Time.deltaTime*2;
@@ -62,7 +55,7 @@ namespace Melancia.Taminha {
 			var updateScore = false;
 			var apply = false;
 			if (mouseState == 1) {
-				var pos = (Vector2)mesh.transform.InverseTransformPoint(cursorPos);
+				var pos = (Vector2)mesh.transform.InverseTransformPoint(cursor.tr.position);
 				if (!deforming) {
 					deforming = true;
 					prevPos = pos;
@@ -75,7 +68,7 @@ namespace Melancia.Taminha {
 				updateScore = true;
 			}
 			if (mouseState == 2) {
-				var pos = (Vector2)mesh.transform.InverseTransformPoint(cursorPos);
+				var pos = (Vector2)mesh.transform.InverseTransformPoint(cursor.tr.position);
 				if (!dragging) {
 					dragging = true;
 					prevPos = pos;
@@ -116,6 +109,7 @@ namespace Melancia.Taminha {
 					}
 				}
 			}
+			cursor.show = !done;
 		}
 	}
 }

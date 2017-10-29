@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720079146609590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.38, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.74, y: 4.74, z: 1}
   m_Children:
   - {fileID: 4707604933794830}
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: {x: 0, y: 0}
+  spawnPos: {x: 0, y: 0}
   bg: {fileID: 2800000, guid: eab407fbcb4b6f74db4be5cfb0e7bc4f, type: 3}
   filter: {fileID: 33710987266203910}
   line: {fileID: 120559146359262504}
@@ -195,7 +196,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.08
     widthCurve:
       serializedVersion: 2
       m_Curve:
