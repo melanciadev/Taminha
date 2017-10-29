@@ -16,8 +16,9 @@ namespace Melancia.Taminha
 		[Header("Dialogue Collection")]
 		public Dialogue currentDialogue;
 
-		[Header("Dialogue Top Baloon")]
+		[Header("Dialogue animator")]
 		public Animator topBalloonAnimator;
+		public Animator speakerAnimator;
 
 		[Header("Dialogue")]
 		public int currentDialogueItem;
@@ -36,7 +37,7 @@ namespace Melancia.Taminha
 		//TESTE -TEMP
 		public void Start()
 		{
-			//ShowAct(currentDialogue);
+			ShowAct(currentDialogue);
 		}
 		//TESTE -TEMP
 
@@ -66,20 +67,24 @@ namespace Melancia.Taminha
 		//Show all the act
 		public void ShowAct(Dialogue currentDialogue)
 		{
-			//Change to the right Balloon
+			//Change to the right Balloon and speaker
 			switch (currentDialogue.speaker) {
 			case Character.ChitchatGirl:
 				topBalloonAnimator.SetInteger("ballonIndex", 0);
+				speakerAnimator.SetInteger("characterIndex", 0);
 				break;
 			case Character.CoolProfessor:
 				topBalloonAnimator.SetInteger("ballonIndex", 1);
+				speakerAnimator.SetInteger("characterIndex", 1);
 				break;
 			case Character.TennisClubProfessor:
 				topBalloonAnimator.SetInteger("ballonIndex", 2);
+				speakerAnimator.SetInteger("characterIndex", 2);
 				break;
 			}
-			currentDialogueItem = 0;
 
+
+			currentDialogueItem = 0;
 			ShowCurrentDialogue (currentDialogue.dialogueList);
 		}
 
