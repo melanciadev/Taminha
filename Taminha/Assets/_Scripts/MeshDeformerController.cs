@@ -6,6 +6,7 @@ namespace Melancia.Taminha {
 	public class MeshDeformerController:MonoBehaviour {
 		public Camera cam;
 		public MeshDeformer mesh;
+		public AudioSource aud;
 		public Texture2D bg;
 		public QuadCursor cursor;
 		public bool useTimer = true;
@@ -21,12 +22,15 @@ namespace Melancia.Taminha {
 		float resizing = 1;
 		float resetSeed = 0;
 		Vector3 one;
+		float mouseVelocity = 0;
 		
 		void Start() {
 			one = mesh.transform.localScale;
 			mesh.spawnPos = mesh.transform.InverseTransformPoint(transform.position);
 			cursor.cam = cam;
 			mesh.bg = bg;
+			aud.volume = 0;
+			aud.Play();
 		}
 		
 		void Update() {
@@ -54,14 +58,17 @@ namespace Melancia.Taminha {
 			}
 			var updateScore = false;
 			var apply = false;
+			float newVelocity = 0;
 			if (mouseState == 1) {
 				var pos = (Vector2)mesh.transform.InverseTransformPoint(cursor.tr.position);
 				if (!deforming) {
 					deforming = true;
 					prevPos = pos;
 				} else if (prevPos != pos) {
-					if (mesh.Deform(prevPos,pos-prevPos)) apply = true;
+					var delta = pos-prevPos;
+					if (mesh.Deform(prevPos,delta)) apply = true;
 					prevPos = pos;
+					newVelocity = delta.sqrMagnitude/Time.deltaTime;
 				}
 			} else if (deforming) {
 				deforming = false;
@@ -73,14 +80,19 @@ namespace Melancia.Taminha {
 					dragging = true;
 					prevPos = pos;
 				} else if (prevPos != pos) {
-					mesh.Move(pos-prevPos);
+					var delta = pos-prevPos;
+					mesh.Move(delta);
 					apply = true;
 					prevPos = pos;
+					newVelocity = delta.sqrMagnitude/Time.deltaTime;
 				}
 			} else if (dragging) {
 				dragging = false;
 				updateScore = true;
 			}
+			mouseVelocity = Mathf.Lerp(mouseVelocity,Mathf.Clamp(newVelocity*15,0,2),Time.deltaTime*10);
+			aud.pitch = mouseVelocity*.4f+.4f;
+			aud.volume = Mathf.Clamp01(mouseVelocity*4);
 			resetSeed -= Time.deltaTime*6;
 			if (resetSeed <= 0) {
 				do {

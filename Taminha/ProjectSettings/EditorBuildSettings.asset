@@ -15,32 +15,23 @@ EditorBuildSettings:
     path: Assets/_Scenes/02_deformFirst.unity
     guid: b2b2485b59652415a826f6327933a3ff
   - enabled: 1
-    path: Assets/_Scenes/03_animationHeadFirst.unity
-    guid: 186def054cee24e5692cf2667d293539
-  - enabled: 1
     path: Assets/_Scenes/04_dialogueFirst.unity
     guid: 74fc0c829caf548169649dc5432c21f9
   - enabled: 1
     path: Assets/_Scenes/05_posingSecond.unity
-    guid: c8644898dc8354323a9d9478566b39c7
+    guid: 2ccea1d6494184581b68ef99f6e4fe0c
   - enabled: 1
     path: Assets/_Scenes/06_deformSecond.unity
-    guid: f3802d7c80b1e49f4a10d40d1dc2dd2c
-  - enabled: 1
-    path: Assets/_Scenes/07_animationHeadSecond.unity
-    guid: 759ebff43e8e4409fac0de5aa4eb5b5a
+    guid: 1965c7ae2d2b4439ab913380c09350c1
   - enabled: 1
     path: Assets/_Scenes/08_dialogueSecond.unity
     guid: becf38be04c7f4a469561174ee9e0ae8
   - enabled: 1
     path: Assets/_Scenes/09_posingThird.unity
-    guid: 2ccea1d6494184581b68ef99f6e4fe0c
+    guid: c8644898dc8354323a9d9478566b39c7
   - enabled: 1
     path: Assets/_Scenes/10_deformThird.unity
-    guid: 1965c7ae2d2b4439ab913380c09350c1
-  - enabled: 1
-    path: Assets/_Scenes/11_animationHeadThird.unity
-    guid: 78d062d534ca84d1f8ead0ad3ceb93f5
+    guid: f3802d7c80b1e49f4a10d40d1dc2dd2c
   - enabled: 1
     path: Assets/_Scenes/12_dialogueThird.unity
     guid: 56314780d5ddd46cd84d97595acba3f1

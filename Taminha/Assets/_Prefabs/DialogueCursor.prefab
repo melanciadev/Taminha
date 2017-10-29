@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4584016517681406}
   - component: {fileID: 20805635370413342}
   - component: {fileID: 114776475862138510}
+  - component: {fileID: 114499547812314178}
   m_Layer: 9
   m_Name: DialogueCursor
   m_TagString: Untagged
@@ -76,6 +77,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &114499547812314178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751660768913874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7d5f36806e0044fb101757e004eb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114776475862138510
 MonoBehaviour:
   m_ObjectHideFlags: 1
