@@ -7,16 +7,15 @@ namespace Melancia.Taminha {
 		public Camera cam;
 		public bool show = false;
 		public float alpha = 0;
+		public Texture2D[] tex;
 		
 		public Transform tr { get; private set; }
 		Renderer rend;
-		Color colour;
 		
 		void Awake() {
 			tr = transform;
-			rend = GetComponent<Renderer>();
+			rend = tr.Find("Quad").GetComponent<Renderer>();
 			tr.position = new Vector3(0,0,-9.9f);
-			colour = rend.material.color;
 		}
 
 		void Update() {
@@ -24,7 +23,7 @@ namespace Melancia.Taminha {
 				if (alpha < 1) {
 					alpha += Time.deltaTime*4;
 					if (alpha > 1) alpha = 1;
-					rend.material.color = new Color(colour.r,colour.g,colour.b,alpha);
+					rend.material.color = new Color(1,1,1,alpha);
 				}
 				float h = cam.orthographicSize;
 				float w = h*CameraController.idealProp;
@@ -37,8 +36,11 @@ namespace Melancia.Taminha {
 				if (alpha > 0) {
 					alpha -= Time.deltaTime*4;
 					if (alpha < 0) alpha = 0;
-					rend.material.color = new Color(colour.r,colour.g,colour.b,alpha);
+					rend.material.color = new Color(1,1,1,alpha);
 				}
+			}
+			if (alpha > 0) {
+				rend.material.mainTexture = tex[(int)(Time.time*12)%tex.Length];
 			}
 		}
 	}
