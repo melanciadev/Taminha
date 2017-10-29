@@ -208,6 +208,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 541094358}
   m_Script: {fileID: 11500000, guid: 6f7747232b8105a4ca0c8dc7de6a7564, type: 3}
+--- !u!82 &541094360 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82878607111017964, guid: 991caac1ae95bac4b904b6cae78cfac9,
+    type: 2}
+  m_PrefabInternal: {fileID: 541094358}
 --- !u!1 &709110324
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2131901010}
   mesh: {fileID: 541094359}
+  aud: {fileID: 541094360}
   bg: {fileID: 2800000, guid: 2a6f420c900368f40a20889a7eac352c, type: 3}
   cursor: {fileID: 1173692518}
   useTimer: 1

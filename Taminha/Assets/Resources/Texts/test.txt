@@ -1,6 +1,0 @@
-p "Hi, isn’t it such a beautiful day? I think it’s lovely! It reminds me of the flowers on my grandma’s garden."
-p "Phew… Well, have you seen the fat lady’s cat? It sure is nice, I want to pet it, and love it, forever and ever!"
-p "WHAT IS THIS ALARM??? Omg, don’t you hate when alarms go off all night long? Gosh, I surely do!"
-p "But enough about me, what about you? What do you like? I think you’re into normal stuff, just like me! It is what your face tells me."
-p "Oh, don’t be shy, you can talk to me! Go on!"
-g "I agree with all you said. I’m a boy." "AAAAAH YOU TALK TOO MUCH, GO AWAY!!"

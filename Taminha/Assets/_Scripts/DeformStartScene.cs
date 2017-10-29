@@ -8,6 +8,8 @@ namespace Melancia.Taminha {
 		public Camera cam;
 		public Renderer lockRend;
 		public Texture2D[] lockTex;
+		public AudioSource aud;
+		public AudioClip lockTransition;
 
 		float transition = 0;
 		bool done = false;
@@ -16,6 +18,8 @@ namespace Melancia.Taminha {
 			if (mesh.done) {
 				if (!done) {
 					done = true;
+					aud.Stop();
+					AudioController.Play(lockTransition,.5f);
 					GameController.NextScene(Transition.Fade,2,.5f);
 				}
 				transition += Time.deltaTime*.5f;
