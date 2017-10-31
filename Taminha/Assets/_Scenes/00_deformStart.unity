@@ -209,7 +209,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385812683}
-  m_Text: Redimensione-se para o formato da fechadura para entrar
+  m_Text: "Redimensione-se no formato da fechadura para come\xE7ar"
   m_OffsetZ: 0
   m_CharacterSize: 0.03
   m_LineSpacing: 1
