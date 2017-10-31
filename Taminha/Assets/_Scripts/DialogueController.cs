@@ -10,8 +10,8 @@ namespace Melancia.Taminha
 	{
 		[Header("Text Speed")]
 		public float slowTextSpeed = 0.2f;
-		public float regularTextSpeed = 0.05f;
-		public float fastTextSpeed = 0.01f;
+		public float regularTextSpeed = 0.02f;
+		public float fastTextSpeed = 0.005f;
 		private float currentTextSpeed;
 
 		[Header("Dialogue Collection")]

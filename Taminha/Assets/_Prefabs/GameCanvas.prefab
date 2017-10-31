@@ -579,8 +579,8 @@ MonoBehaviour:
   balloonImage: {fileID: 114091021295067046}
   startBalloonScale: {x: 0, y: 0}
   finalBalloonScale: {x: 1, y: 1}
-  speedOutGood: 0.1
-  speedOutBad: 0.5
+  speedOutGood: 3
+  speedOutBad: 0.6
   audioSourceBgm: {fileID: 82866278129553228}
   audioSourceSpeech: {fileID: 82895783540073758}
   dialogueBgm: {fileID: 8300000, guid: 40fdb20ad1506c94ca61b3e50de544b3, type: 3}

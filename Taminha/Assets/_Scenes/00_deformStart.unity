@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 385812685}
   - component: {fileID: 385812684}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385812683}
-  m_Text: Redimensione-se para entrar pela fechadura
+  m_Text: Redimensione-se para o formato da fechadura para entrar
   m_OffsetZ: 0
   m_CharacterSize: 0.03
   m_LineSpacing: 1
@@ -556,6 +556,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5402d34483a63e84d82dbf4e63e9172e, type: 3}
   aud: {fileID: 1611702030}
   lockTransition: {fileID: 8300000, guid: 81acb37cbcad2604aa8f64e0cd739940, type: 3}
+  lastScene: 0
 --- !u!20 &1611702027
 Camera:
   m_ObjectHideFlags: 0
@@ -768,8 +769,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1688227619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.52, y: -3.877593, z: -8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.621, y: -3.827, z: -8}
+  m_LocalScale: {x: 1.17113, y: 1.17113, z: 1.17113}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
