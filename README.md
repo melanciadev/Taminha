@@ -1,8 +1,6 @@
 # Meninu
 
-Made for SPJam 2017.
-
-Download: [melancia.itch.io/meninu](http://melancia.itch.io/meninu)
+More info at [melancia.itch.io/meninu](http://melancia.itch.io/meninu)
 
 # License
 
